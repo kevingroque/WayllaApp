@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+    <tab
+        id="@+id/tab_mapa"
+        title="Mapa"
+        barColorWhenSelected="@color/white"
+        icon="@drawable/ic_map_marker_radius"
+        inActiveColor="#000"
+        activeColor="@color/colorPrimary"
+        />
+
+    <tab
+        id="@+id/tab_lomas_list"
+        title="Lomas"
+        barColorWhenSelected="@color/white"
+        icon="@drawable/ic_view_list"
+        inActiveColor="#000"
+        activeColor="@color/colorPrimary"
+        />
+
+</tabs>

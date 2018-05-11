@@ -1,0 +1,113 @@
+{
+  "project_info": {
+    "project_number": "27107697578",
+    "firebase_url": "https://gamificador-turismo.firebaseio.com",
+    "project_id": "gamificador-turismo",
+    "storage_bucket": "gamificador-turismo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:27107697578:android:ec340b772055021c",
+        "android_client_info": {
+          "package_name": "app.roque.com.waylla"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "27107697578-p4tmp0r8o40f3fmh5mkokip9lru187id.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "app.roque.com.waylla",
+            "certificate_hash": "a6b144ceb439c7e60601bbb39424ff503aeec7a4"
+          }
+        },
+        {
+          "client_id": "27107697578-hulkq59n8fc75ooe15hr0t97gj5ovnho.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgGi2AYzkiukYpxW07mgd0EeUdbXIj_aA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "27107697578-hulkq59n8fc75ooe15hr0t97gj5ovnho.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "27107697578-mqp5ie357mpl26kevo1s4rsfhpfusobk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.tecsup.GamificadoTurismoApp"
+              }
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:27107697578:android:1d129267b516320d",
+        "android_client_info": {
+          "package_name": "app.roque.com.wayllaapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "27107697578-tiuujbv24gkl3uhjbq0r1t5p65aa5f81.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "app.roque.com.wayllaapp",
+            "certificate_hash": "a6b144ceb439c7e60601bbb39424ff503aeec7a4"
+          }
+        },
+        {
+          "client_id": "27107697578-hulkq59n8fc75ooe15hr0t97gj5ovnho.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgGi2AYzkiukYpxW07mgd0EeUdbXIj_aA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "27107697578-hulkq59n8fc75ooe15hr0t97gj5ovnho.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "27107697578-mqp5ie357mpl26kevo1s4rsfhpfusobk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.tecsup.GamificadoTurismoApp"
+              }
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
