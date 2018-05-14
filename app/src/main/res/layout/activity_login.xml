@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -24,7 +23,7 @@
         android:layout_below="@id/imgLogo"
         android:layout_marginTop="10dp"
         android:gravity="center"
-        android:text="Inicia Sesión"
+        android:text="@string/inicia_session"
         android:textSize="30sp"
         android:textColor="@color/white"
         android:textStyle="bold"/>
@@ -39,33 +38,15 @@
         android:layout_below="@id/txtLogin"
         android:background="@color/white"/>
 
-    <Button
-        android:id="@+id/bntLoginFB"
+    <com.google.android.gms.common.SignInButton
+        android:layout_below="@+id/divide"
+        android:id="@+id/btn_signIn_google"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_below="@id/divide"
-        android:padding="20dp"
         android:layout_marginStart="35dp"
-        android:layout_marginEnd="35dp"
-        android:text="Facebook"
-        android:textColor="@color/white"
-        android:background="@color/colorPrimary"
-        android:onClick="Go"/>
+        android:layout_marginEnd="35dp"/>
 
-    <Button
-        android:id="@+id/bntLoginGoogle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_below="@id/bntLoginFB"
-        android:padding="20dp"
-        android:layout_marginStart="35dp"
-        android:layout_marginEnd="35dp"
-        android:text="Google"
-        android:textColor="@color/white"
-        android:background="@color/bg_screen1"
-        android:onClick="Go"/>
 
 </RelativeLayout>
 

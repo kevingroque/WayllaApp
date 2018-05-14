@@ -3,7 +3,6 @@ package app.roque.com.wayllaapp.Utils;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,8 +10,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
 
 import java.util.List;
 
@@ -22,8 +19,8 @@ import app.roque.com.wayllaapp.models.Lomas;
 
 public class LomasListAdapter extends RecyclerView.Adapter<LomasListAdapter.LomasListHolder>{
 
-    Context context;
-    List<Lomas> lomasList;
+    private Context context;
+    private List<Lomas> lomasList;
 
     public LomasListAdapter(Context context, List<Lomas> lomasList) {
         this.context = context;
@@ -43,13 +40,7 @@ public class LomasListAdapter extends RecyclerView.Adapter<LomasListAdapter.Loma
         Lomas lomas = this.lomasList.get(position);
         holder.nombre.setText(lomas.getNombre());
         holder.descripcion.setText(lomas.getDescripcion());
-
-        FirebaseStorage storage = FirebaseStorage.getInstance();
-        StorageReference storageReference = storage.getReferenceFromUrl("gs://gamificador-turismo.appspot.com/lomas").child("loma_01.png");
-        Log.d("Foto", storageReference.toString());
-        Glide.with(holder.itemView.getContext()).load(storageReference).into(holder.imagen);
-       // Glide.with(holder.itemView.getContext()).using(new FirebaseImageLoader()).load(storageReference).into(holder.imagen);
-
+        Glide.with(holder.itemView.getContext()).load(lomas.getImagen()).into(holder.imagen);
     }
 
     @Override

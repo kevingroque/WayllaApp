@@ -4,6 +4,8 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
+    <color name="black_semi_transparent">#B2000000</color>
+
     <color name="bg_login">#FDFEFE</color>
     <color name="bg_register">#F4ECDE</color>
     <color name="bg_main">#428bca</color>

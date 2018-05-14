@@ -30,7 +30,12 @@
         <activity android:name=".IntroSliderActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".LomasInfoActivity" />
+        <activity android:name=".LomasInfoActivity"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"/>
+        </activity>
         <activity android:name=".PostActivity"></activity>
     </application>
 

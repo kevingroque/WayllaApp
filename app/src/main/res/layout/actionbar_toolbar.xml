@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.AppBarLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.AppBarLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/bg_toolbar"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@null"
     android:theme="@style/AppTheme.PopupOverlay">
 
     <FrameLayout
@@ -16,7 +16,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:layout_gravity="center"
-            android:text="Titulo"
+            tools:text="Titulo"
             android:textSize="20sp"
             android:textColor="@color/colorPrimary"
             android:textStyle="bold"/>
