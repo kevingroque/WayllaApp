@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#6563f4"
-    tools:context="app.roque.com.wayllaapp.SplashActivity">
+    tools:context="app.roque.com.wayllaapp.activities.SplashActivity">
 
     <LinearLayout
         android:layout_width="match_parent"

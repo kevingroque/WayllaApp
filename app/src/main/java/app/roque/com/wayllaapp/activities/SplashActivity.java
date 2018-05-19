@@ -1,9 +1,11 @@
-package app.roque.com.wayllaapp;
+package app.roque.com.wayllaapp.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
+
+import app.roque.com.wayllaapp.R;
 
 public class SplashActivity extends AppCompatActivity {
 

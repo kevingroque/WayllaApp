@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+    <tab
+        id="@+id/tab_inicio_detalle"
+        title="Mapa"
+        barColorWhenSelected="@color/white"
+        icon="@drawable/ic_home_black"
+        inActiveColor="#000"
+        activeColor="@color/colorPrimary" />
+
+    <tab
+        id="@+id/tab_recursos_detalle"
+        title="Lomas"
+        barColorWhenSelected="@color/white"
+        icon="@drawable/ic_view_list"
+        inActiveColor="#000"
+        activeColor="@color/colorPrimary" />
+
+    <tab
+        id="@+id/tab_galeria_detalle"
+        title="Mapa"
+        barColorWhenSelected="@color/white"
+        icon="@drawable/ic_gallery"
+        inActiveColor="#000"
+        activeColor="@color/colorPrimary" />
+
+    <tab
+        id="@+id/tab_rutas_detalle"
+        title="Lomas"
+        barColorWhenSelected="@color/white"
+        icon="@drawable/ic_map_black"
+        inActiveColor="#000"
+        activeColor="@color/colorPrimary" />
+
+    <tab
+        id="@+id/tab_preguntas_detalle"
+        title="Mapa"
+        barColorWhenSelected="@color/white"
+        icon="@drawable/ic_help_black"
+        inActiveColor="#000"
+        activeColor="@color/colorPrimary" />
+</tabs>

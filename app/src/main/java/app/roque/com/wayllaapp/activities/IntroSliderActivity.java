@@ -1,4 +1,4 @@
-package app.roque.com.wayllaapp;
+package app.roque.com.wayllaapp.activities;
 
 import android.content.Context;
 import android.content.Intent;
@@ -18,7 +18,8 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import app.roque.com.wayllaapp.preferences.IntroSliderManager;
+import app.roque.com.wayllaapp.R;
+import app.roque.com.wayllaapp.Utils.IntroSliderManager;
 
 public class IntroSliderActivity extends AppCompatActivity {
 

@@ -2,6 +2,7 @@ package app.roque.com.wayllaapp.models;
 
 public class Lomas {
 
+    private String id;
     private String nombre;
     private String descripcion;
     private Float elevacion;
@@ -13,7 +14,8 @@ public class Lomas {
     public Lomas() {
     }
 
-    public Lomas(String nombre, String descripcion, Float elevacion, String imagen, Float latitud, Float longitud, String ubicacion) {
+    public Lomas(String id, String nombre, String descripcion, Float elevacion, String imagen, Float latitud, Float longitud, String ubicacion) {
+        this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.elevacion = elevacion;
@@ -21,6 +23,14 @@ public class Lomas {
         this.latitud = latitud;
         this.longitud = longitud;
         this.ubicacion = ubicacion;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getNombre() {
@@ -82,7 +92,8 @@ public class Lomas {
     @Override
     public String toString() {
         return "Lomas{" +
-                "nombre='" + nombre + '\'' +
+                "id='" + id + '\'' +
+                ", nombre='" + nombre + '\'' +
                 ", descripcion='" + descripcion + '\'' +
                 ", elevacion=" + elevacion +
                 ", imagen='" + imagen + '\'' +

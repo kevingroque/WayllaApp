@@ -1,4 +1,4 @@
-package app.roque.com.wayllaapp;
+package app.roque.com.wayllaapp.activities;
 
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +8,10 @@ import android.widget.TextView;
 
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnTabSelectListener;
+
+import app.roque.com.wayllaapp.fragments.LomasListFragment;
+import app.roque.com.wayllaapp.fragments.MapaFragment;
+import app.roque.com.wayllaapp.R;
 
 public class LomasInfoActivity extends AppCompatActivity {
 

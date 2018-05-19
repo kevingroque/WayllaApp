@@ -1,4 +1,4 @@
-package app.roque.com.wayllaapp;
+package app.roque.com.wayllaapp.fragments;
 
 
 import android.os.Bundle;
@@ -18,6 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
+import app.roque.com.wayllaapp.R;
 import app.roque.com.wayllaapp.Utils.LomasListAdapter;
 import app.roque.com.wayllaapp.models.Lomas;
 

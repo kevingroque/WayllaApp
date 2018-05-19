@@ -1,13 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="app.roque.com.wayllaapp.MapaFragment">
+    tools:context="app.roque.com.wayllaapp.fragments.MapaFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/map_lomas"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent" />
+
+   <!-- <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:background="#7Fb8bec6"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp">
+
+        <EditText
+            android:id="@+id/etx_buscar_loma"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:ems="10"
+            android:hint="Ingrese lugar"
+            android:background="@drawable/edittext_outline"
+            android:maxLines="1" />
+
+        <ImageButton
+            android:id="@+id/btn_buscar_mapa"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/round_button"
+            android:tint="@color/white"
+            android:src="@drawable/ic_search" />
+
+    </LinearLayout> -->
 
 </FrameLayout>

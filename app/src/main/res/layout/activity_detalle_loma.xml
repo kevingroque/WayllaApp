@@ -4,17 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="app.roque.com.wayllaapp.activities.LomasInfoActivity">
+    tools:context="app.roque.com.wayllaapp.activities.DetalleLomaActivity">
 
     <include layout="@layout/actionbar_toolbar" />
 
     <FrameLayout
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        android:id="@+id/container_lomas"
+        android:id="@+id/container_lomas_detalle"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="60dp"/>
 
-   <include layout="@layout/bottom_bar_lomas"/>
+    <include layout="@layout/bottom_bar_lomas_detalle"/>
 
 </android.support.design.widget.CoordinatorLayout>

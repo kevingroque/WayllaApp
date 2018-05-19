@@ -1,8 +1,10 @@
 package app.roque.com.wayllaapp.Utils;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,10 +12,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.List;
 
 import app.roque.com.wayllaapp.R;
+import app.roque.com.wayllaapp.activities.DetalleLomaActivity;
 import app.roque.com.wayllaapp.models.Lomas;
 
 
@@ -37,10 +42,22 @@ public class LomasListAdapter extends RecyclerView.Adapter<LomasListAdapter.Loma
 
     @Override
     public void onBindViewHolder(@NonNull LomasListHolder holder, int position) {
-        Lomas lomas = this.lomasList.get(position);
+        final Lomas lomas = this.lomasList.get(position);
         holder.nombre.setText(lomas.getNombre());
-        holder.descripcion.setText(lomas.getDescripcion());
         Glide.with(holder.itemView.getContext()).load(lomas.getImagen()).into(holder.imagen);
+
+        final DatabaseReference lomaId = FirebaseDatabase.getInstance().getReference().child("lomas/");
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, DetalleLomaActivity.class);
+                intent.putExtra("ID", lomas.getId());
+                Log.d("LomasId", "Lomas ID: " +lomaId);
+                context.startActivity(intent);
+            }
+        });
+
     }
 
     @Override
@@ -57,7 +74,6 @@ public class LomasListAdapter extends RecyclerView.Adapter<LomasListAdapter.Loma
         public LomasListHolder(View itemView) {
             super(itemView);
             nombre = (TextView)itemView.findViewById(R.id.txt_nombre_lomas_list);
-            descripcion = (TextView)itemView.findViewById(R.id.txt_descripcion_lomas_list);
             imagen = (ImageView)itemView.findViewById(R.id.img_lomas_list);
         }
     }
