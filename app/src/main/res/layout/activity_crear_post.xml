@@ -1,61 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="app.roque.com.wayllaapp.activities.CrearPostActivity">
+    android:padding="@dimen/intrinsic_padding"
+    tools:context=".activities.CrearPostActivity">
 
-        <LinearLayout
-            android:layout_marginTop="20dp"
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusableInTouchMode="true"
+        android:focusable="true">
+
+        <RelativeLayout
+            android:id="@+id/image_container_crear_post"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="300dp"
+            android:layout_marginBottom="15dp"
+            android:layout_alignParentTop="true">
 
             <ImageView
-                android:id="@+id/img_post"
+                android:id="@+id/imageView_photo_crear_post"
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
-                android:adjustViewBounds="true"
-                android:scaleType="centerCrop"/>
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_stub"
+                android:focusableInTouchMode="true"
+                android:scaleType="centerCrop"
+                android:focusable="true" />
 
-            <LinearLayout
+            <ProgressBar
+                android:id="@+id/progressBar_crear_post"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerInParent="true"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_title_crear_post"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/intrinsic_padding"
+            android:layout_below="@+id/image_container_crear_post">
+
+            <EditText
+                android:id="@+id/editText_title_crear_post"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:orientation="horizontal">
+                android:hint="@string/hint_title"
+                android:inputType="textMultiLine" />
 
-                <ImageButton
-                    android:id="@+id/btn_post_select_image"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginRight="8dp"
-                    android:backgroundTint="@color/white"
-                    android:src="@drawable/ic_camera_plus"/>
+        </android.support.design.widget.TextInputLayout>
 
-                <EditText
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_weight="1"
-                    android:id="@+id/edittext_post_descripcion"
-                    android:maxLines="5"
-                    android:hint="Descripción" />
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_description_crear_post"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
 
-                <ImageButton
-                    android:id="@+id/btn_post_send"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginRight="16dp"
-                    android:backgroundTint="@color/white"
-                    android:src="@drawable/ic_send_black"/>
+            android:layout_below="@+id/input_layout_title_crear_post">
 
-            </LinearLayout>
+            <EditText
+                android:id="@+id/editText_descripcion_crear_post"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:hint="@string/hint_description"
+                android:inputType="textMultiLine" />
 
-        </LinearLayout>
+        </android.support.design.widget.TextInputLayout>
 
-</android.support.design.widget.CoordinatorLayout>
+
+        <Button
+            android:id="@+id/btn_crear_post"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/input_layout_description_crear_post"
+            android:layout_marginTop="10dp"
+            android:text="Publicar"
+            android:layout_alignParentBottom="true"/>
+    </RelativeLayout>
+
+</ScrollView>

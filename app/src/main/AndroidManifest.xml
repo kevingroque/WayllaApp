@@ -2,9 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="app.roque.com.wayllaapp">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_INTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
@@ -43,7 +48,10 @@
                 android:value=".activities.MainActivity" />
         </activity>
         <activity android:name=".activities.PostActivity" />
-        <activity android:name=".activities.CrearPostActivity" />
+
+        <activity android:name=".activities.CrearPostActivity"
+            android:configChanges="orientation|screenSize"/>
+
         <activity android:name=".activities.DetalleLomaActivity" android:parentActivityName=".activities.LomasInfoActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

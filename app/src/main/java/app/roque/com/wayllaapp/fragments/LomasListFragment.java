@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import app.roque.com.wayllaapp.R;
-import app.roque.com.wayllaapp.Utils.LomasListAdapter;
+import app.roque.com.wayllaapp.adapters.LomasListAdapter;
 import app.roque.com.wayllaapp.models.Lomas;
 
 public class LomasListFragment extends Fragment {

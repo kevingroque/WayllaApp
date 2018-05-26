@@ -65,7 +65,7 @@ public class CrearPostDialog extends DialogFragment implements View.OnClickListe
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == RC_PHOTO_PICKED && requestCode == RESULT_OK){
+        if (requestCode == RC_PHOTO_PICKED && resultCode == RESULT_OK){
             mSelectedUri = data.getData();
             mPostDisplay.setImageURI(mSelectedUri);
         }

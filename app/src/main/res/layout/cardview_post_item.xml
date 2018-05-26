@@ -1,141 +1,180 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView
-    android:layout_marginTop="12dp"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:carview="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/postCard"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    carview:cardCornerRadius="5dp">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/intrinsic_padding"
+    android:paddingRight="@dimen/intrinsic_padding"
+    android:paddingTop="@dimen/intrinsic_padding">
 
-    <LinearLayout
-        android:orientation="vertical"
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view_post_list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#fff">
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        card_view:cardBackgroundColor="@android:color/white"
+        card_view:cardCornerRadius="2dp"
+        card_view:cardElevation="@dimen/post_card_elevation"
+        card_view:cardUseCompatPadding="true">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:background="#fff">
-
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="15dp"
-                android:src="@drawable/ic_android_logo"
-                android:layout_gravity="center_vertical"/>
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="3dp"
-                android:layout_marginEnd="17dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Keving Hanz Roque Huich"
-                    android:textSize="20sp"/>
-
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="3dp">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="10/05/2018"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:text="10:23 pm"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:text="Lachay"/>
-                </LinearLayout>
-            </LinearLayout>
-
-
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Esta es una descripcion"
-                android:padding="15dp"
-                android:textSize="16sp"
-                android:maxLines="3"/>
+            android:layout_height="match_parent">
 
             <ImageView
+                android:id="@+id/img_foto_post_list"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_marginTop="7dp"
-                android:padding="15sp"
-                android:src="@drawable/ic_launcher_background"
-                android:scaleType="centerCrop"/>
+                android:background="@drawable/ic_launcher_background"
+                android:layout_height="@dimen/post_list_item_image_height"
+                android:layout_marginBottom="@dimen/intrinsic_padding"
+                android:scaleType="centerCrop" />
 
-        </LinearLayout>
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img_perfil_user_post_list"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@+id/img_foto_post_list"
+                android:layout_marginRight="@dimen/intrinsic_padding"
+                android:layout_marginTop="@dimen/post_list_item_author_image_margin"
+                android:src="@drawable/ic_android_logo"
+                app:civ_border_color="@color/like_icon_activated"
+                app:civ_border_width="3dp"/>
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_marginTop="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp"
-            android:gravity="center">
-
-            <CheckBox
-                android:id="@+id/chkReacciones"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:button="@drawable/ic_android_logo"/>
             <TextView
+                android:id="@+id/txt_nombre_post_list"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/intrinsic_padding"
+                android:paddingRight="@dimen/intrinsic_padding"
+                android:layout_below="@+id/img_foto_post_list"
+                android:layout_alignParentStart="true"
+                android:layout_toStartOf="@+id/img_perfil_user_post_list"
+                android:ellipsize="end"
+                android:maxLines="1"
+                tools:text="Keving Hanz Roque Huich"
+                android:textAppearance="@style/TextAppearance.Title" />
+
+            <LinearLayout
+                android:id="@+id/container_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
                 android:layout_marginStart="5dp"
-                android:gravity="center"
-                android:text="322"
-                android:textSize="18sp"
-                android:textStyle="bold"/>
+                android:layout_marginBottom="@dimen/intrinsic_padding"
+                android:layout_below="@+id/txt_nombre_post_list">
 
-            <TextView
+                <LinearLayout
+                    android:id="@+id/timeContainer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/intrinsic_padding"
+                    android:paddingBottom="@dimen/intrinsic_padding"
+                    android:paddingRight="@dimen/intrinsic_padding"
+                    android:layout_marginStart="5dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/timeImageView"
+                        app:srcCompat="@drawable/ic_time"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp" />
+
+                    <TextView
+                        android:id="@+id/timeTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/small_intrinsic_padding"
+                        android:text="4:45 pm"
+                        android:textAppearance="@style/TextAppearance.Second.Light" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/dateContainer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/intrinsic_padding"
+                    android:paddingBottom="@dimen/intrinsic_padding"
+                    android:paddingRight="@dimen/intrinsic_padding"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/dateImageView"
+                        app:srcCompat="@drawable/ic_calendar"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp" />
+
+                    <TextView
+                        android:id="@+id/dateTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/small_intrinsic_padding"
+                        android:text="May 28, 2016"
+                        android:textAppearance="@style/TextAppearance.Second.Light" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/placeContainer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/intrinsic_padding"
+                    android:paddingBottom="@dimen/intrinsic_padding"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/placeImageView"
+                        app:srcCompat="@drawable/ic_place"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp" />
+
+                    <TextView
+                        android:id="@+id/placeTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Lima"
+                        android:paddingLeft="@dimen/small_intrinsic_padding"
+                        android:textAppearance="@style/TextAppearance.Second.Light" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <com.borjabravo.readmoretextview.ReadMoreTextView
+                android:id="@+id/txt_descripcion_post_list"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginStart="80dp"
-                android:gravity="center"
-                android:drawableLeft="@drawable/ic_android_logo"
-                android:text="45"
-                android:textSize="18sp"
-                android:textStyle="bold"/>
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/intrinsic_padding"
+                android:paddingRight="@dimen/intrinsic_padding"
+                android:layout_below="@+id/container_date"
+                android:layout_alignParentStart="true"
+                android:layout_toStartOf="@+id/img_perfil_user_post_list"
+                android:ellipsize="end"
+                tools:text="Descripcion del la imagen"
+                android:textAppearance="@style/TextAppearance.Second"
+                android:layout_alignParentEnd="true"
+                app:trimExpandedText="  Ver más..."
+                app:trimCollapsedText="  Ver menos"
+                app:colorClickableText="@android:color/holo_blue_light"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginStart="80dp"
-                android:gravity="center"
-                android:text="52"
-                android:drawableLeft="@drawable/ic_android_logo"
-                android:textSize="18sp"
-                android:textStyle="bold"/>
+            <include
+                android:id="@+id/counters_container_post_list"
+                layout="@layout/counters_panel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="@dimen/intrinsic_padding"
+                android:layout_below="@+id/txt_descripcion_post_list"/>
 
-        </LinearLayout>
+        </RelativeLayout>
 
-    </LinearLayout>
+    </android.support.v7.widget.CardView>
 
-</android.support.v7.widget.CardView>
+</LinearLayout>

@@ -1,4 +1,4 @@
-package app.roque.com.wayllaapp.Utils;
+package app.roque.com.wayllaapp.adapters;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,8 +12,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.List;
 
@@ -26,6 +24,7 @@ public class LomasListAdapter extends RecyclerView.Adapter<LomasListAdapter.Loma
 
     private Context context;
     private List<Lomas> lomasList;
+    private String lomas_key;
 
     public LomasListAdapter(Context context, List<Lomas> lomasList) {
         this.context = context;
@@ -43,17 +42,16 @@ public class LomasListAdapter extends RecyclerView.Adapter<LomasListAdapter.Loma
     @Override
     public void onBindViewHolder(@NonNull LomasListHolder holder, int position) {
         final Lomas lomas = this.lomasList.get(position);
+
         holder.nombre.setText(lomas.getNombre());
         Glide.with(holder.itemView.getContext()).load(lomas.getImagen()).into(holder.imagen);
-
-        final DatabaseReference lomaId = FirebaseDatabase.getInstance().getReference().child("lomas/");
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, DetalleLomaActivity.class);
-                intent.putExtra("ID", lomas.getId());
-                Log.d("LomasId", "Lomas ID: " +lomaId);
+                intent.putExtra("ID", lomas_key);
+                Log.d("LomasId", "Lomas ID: " +lomas_key);
                 context.startActivity(intent);
             }
         });
@@ -75,6 +73,7 @@ public class LomasListAdapter extends RecyclerView.Adapter<LomasListAdapter.Loma
             super(itemView);
             nombre = (TextView)itemView.findViewById(R.id.txt_nombre_lomas_list);
             imagen = (ImageView)itemView.findViewById(R.id.img_lomas_list);
+
         }
     }
 }

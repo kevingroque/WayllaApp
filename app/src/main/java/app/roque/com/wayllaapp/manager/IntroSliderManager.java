@@ -1,4 +1,4 @@
-package app.roque.com.wayllaapp.Utils;
+package app.roque.com.wayllaapp.manager;
 
 import android.content.Context;
 import android.content.SharedPreferences;

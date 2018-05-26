@@ -3,6 +3,7 @@ package app.roque.com.wayllaapp.activities;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -12,7 +13,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.akexorcist.roundcornerprogressbar.RoundCornerProgressBar;
 import com.bumptech.glide.Glide;
+import com.facebook.AccessToken;
 import com.getbase.floatingactionbutton.FloatingActionButton;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
@@ -22,18 +25,30 @@ import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import app.roque.com.wayllaapp.R;
+import app.roque.com.wayllaapp.models.Usuario;
 
 public class MainActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
 
-    private TextView nombreToolbar, nombreAppbar;
+    private TextView nombreToolbar;
+    private TextView nombreAppbar;
     private ImageView profilePhoto;
     private GoogleApiClient mGoogleApiClient;
     private FloatingActionButton mBtnSingOut;
+    private RoundCornerProgressBar mLevel;
+    private TextView mNivel;
+    private TextView mMonedas;
 
     private FirebaseAuth mFirebaseAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
+
+    private DatabaseReference mDBReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,8 +57,20 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
 
         nombreAppbar = (TextView)findViewById(R.id.txt_collapsing_nombre);
         nombreToolbar = (TextView)findViewById(R.id.txt_nombre_main);
+        mNivel = (TextView) findViewById(R.id.txt_nivel_user_main);
+        mMonedas = (TextView) findViewById(R.id.txt_monedas_user_main);
         profilePhoto = (ImageView) findViewById(R.id.img_profile_main);
         mBtnSingOut = (FloatingActionButton) findViewById(R.id.fab_logout_main_ac);
+        mLevel = (RoundCornerProgressBar) findViewById(R.id.progress_bar_level);
+
+
+        //#ed3b27 -- rojo
+        mLevel.setProgressColor(Color.parseColor("#F6BD00"));
+        mLevel.setProgressBackgroundColor(Color.parseColor("#FAFAFA"));
+        mLevel.setMax(100);
+        mLevel.setProgress(70);
+
+        mDBReference = FirebaseDatabase.getInstance().getReference();
 
         mBtnSingOut.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,13 +89,43 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
                 .build();
 
+        //Facebook Login
+        if (AccessToken.getCurrentAccessToken() == null){
+            goLoginScreen();
+        }
+
         mFirebaseAuth = FirebaseAuth.getInstance();
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
                 if (user != null){
-                    setUserData(user);
+
+                    //Obtener datos del usuario
+                    DatabaseReference mUser = mDBReference.child("usuarios").child(mFirebaseAuth.getCurrentUser().getUid());
+
+                    mUser.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            Usuario usuario = dataSnapshot.getValue(Usuario.class);
+
+                            //Mostrar datos del usuario en la interfaz principal
+                            mNivel.setText(String.valueOf(usuario.getNivel()));
+                            mMonedas.setText(String.valueOf(usuario.getCoins()));
+                            nombreToolbar.setText(usuario.getNombre());
+                            nombreAppbar.setText(usuario.getNombre());
+                            Glide.with(getApplicationContext()).load(usuario.getAvatar()).into(profilePhoto);
+
+                        }
+
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+
+                        }
+                    });
+
+                    //setUserData(user);
+
                 }else {
                     goLoginScreen();
                 }

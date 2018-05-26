@@ -7,6 +7,7 @@ package app.roque.com.wayllaapp.models;
 public class Usuario {
 
     private String uid;
+    private String nombre;
     private String avatar;
     private int coins;
     private Double distancia_recorrida;
@@ -15,8 +16,9 @@ public class Usuario {
 
     public Usuario(){}
 
-    public Usuario(String uid, String avatar, int coins, Double distancia_recorrida, int nivel, int puntaje) {
+    public Usuario(String uid, String nombre, String avatar, int coins, Double distancia_recorrida, int nivel, int puntaje) {
         this.uid = uid;
+        this.nombre = nombre;
         this.avatar = avatar;
         this.coins = coins;
         this.distancia_recorrida = distancia_recorrida;
@@ -30,6 +32,14 @@ public class Usuario {
 
     public void setUid(String uid) {
         this.uid = uid;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getAvatar() {
@@ -76,6 +86,7 @@ public class Usuario {
     public String toString() {
         return "Usuario{" +
                 "uid='" + uid + '\'' +
+                ", nombre='" + nombre + '\'' +
                 ", avatar='" + avatar + '\'' +
                 ", coins=" + coins +
                 ", distancia_recorrida=" + distancia_recorrida +

@@ -19,7 +19,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import app.roque.com.wayllaapp.R;
-import app.roque.com.wayllaapp.Utils.IntroSliderManager;
+import app.roque.com.wayllaapp.manager.IntroSliderManager;
 
 public class IntroSliderActivity extends AppCompatActivity {
 
